@@ -1,3 +1,5 @@
+import { Routes, Route, NavLink } from "react-router-dom";
+
 export const App = () => {
   return (
     <div
@@ -10,7 +12,6 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
     </div>
   );
 };
