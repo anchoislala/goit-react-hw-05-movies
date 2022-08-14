@@ -1,0 +1,29 @@
+.Container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+} 
+
+.Header {
+    padding: 8px 0;
+    border-bottom: 2px solid grey;
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%), 1px 4px 6px rgb(0 0 0 / 16%);
+        
+}
+
+nav {
+    display: flex;
+}
+
+.NavLink {
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+} 
+
+.NavLink.active {
+    color: white;
+    background-color: gray;
+}
