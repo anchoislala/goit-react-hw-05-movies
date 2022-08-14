@@ -1,5 +1,5 @@
 import { useState, useEffect, Suspense } from "react";
-import { Link, useParams, useLocation, Outlet } from "react-router-dom";
+import { useParams, useLocation, Outlet } from "react-router-dom";
 import { getMovieById } from "ServiceAPI";
 import { BackLink } from "components/BackLink/BackLink";
 import { MovieInformation } from "components/MovieInformation/MovieInformation";
@@ -32,7 +32,7 @@ export const MovieDetails = () => {
       })
       .catch(error => { console.log(error) });
 
-  }, []);
+  }, [movie]);
 
   return (
     <main>

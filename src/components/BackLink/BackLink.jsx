@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import { HiArrowLeft } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import './BackLink.styled.css'
