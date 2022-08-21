@@ -15,7 +15,7 @@ export const Reviews = () => {
             .then(({ results }) => { setReviews([...results]) })
             .catch(error => { console.log(error) });
 
-    }, [getReviews]);
+    }, []);
 
     return (
         <section>

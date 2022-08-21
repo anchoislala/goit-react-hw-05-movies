@@ -32,7 +32,7 @@ export const MovieDetails = () => {
       })
       .catch(error => { console.log(error) });
 
-  }, [movie]);
+  }, []);
 
   return (
     <main>
@@ -46,6 +46,7 @@ export const MovieDetails = () => {
         overview={overview}
         genres={genres}
         poster={poster}
+        backLink={backLinkHref}
       />
 
       <Suspense fallback={null}>

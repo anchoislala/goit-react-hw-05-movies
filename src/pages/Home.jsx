@@ -13,7 +13,7 @@ export const Home = () => {
       .then(movies => { setTrendingMovies([...movies.results]) })
       .catch(error => { console.log(error) });
 
-  }, [trendingMovies]);
+  }, []);
   
   return (
     <main>

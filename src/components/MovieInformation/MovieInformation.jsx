@@ -1,7 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './MovieInformation.styled.css'
    
-export const MovieInformation = ({ title, year, rating, overview, genres, poster }) => {
+export const MovieInformation = ({ title, year, rating, overview, genres, poster, backLink }) => {
+
+    const location = useLocation();
 
     return (
 
@@ -32,10 +34,10 @@ export const MovieInformation = ({ title, year, rating, overview, genres, poster
                 <p>Additional information</p>
                 <ul>
                     <li>
-                        <Link to="cast" className='AdditionalInfoLink'>Cast</Link>
+                        <Link to="cast" state={{ from: backLink }} className='AdditionalInfoLink'>Cast</Link>
                     </li>
                     <li>
-                        <Link to="reviews" className='AdditionalInfoLink'>Reviews</Link>
+                        <Link to="reviews" state={{ from: backLink }} className='AdditionalInfoLink'>Reviews</Link>
                     </li>
                 </ul>
             </div>

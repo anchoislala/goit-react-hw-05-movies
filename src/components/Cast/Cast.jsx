@@ -16,7 +16,7 @@ export const Cast = () => {
             .then(({ cast }) => { setCast([...cast]) })
             .catch(error => { console.log(error) });
 
-    }, [getCast]);
+    }, []);
     
     return (
         <section>
@@ -30,6 +30,8 @@ export const Cast = () => {
                         </div>
                     </li>
                 ))}</ul>
+            
+            {!cast.length && <p>We don't have any information about the cast of this movie.</p>}
         </section>
     );
 };
