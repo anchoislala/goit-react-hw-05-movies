@@ -32,7 +32,7 @@ export const MovieDetails = () => {
       })
       .catch(error => { console.log(error) });
 
-  }, []);
+  }, [id]);
 
   return (
     <main>

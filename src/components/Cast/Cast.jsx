@@ -16,7 +16,7 @@ export const Cast = () => {
             .then(({ cast }) => { setCast([...cast]) })
             .catch(error => { console.log(error) });
 
-    }, []);
+    }, [cast]);
     
     return (
         <section>
