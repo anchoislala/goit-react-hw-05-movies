@@ -1,9 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './MovieInformation.styled.css'
    
 export const MovieInformation = ({ title, year, rating, overview, genres, poster, backLink }) => {
-
-    const location = useLocation();
 
     return (
 
