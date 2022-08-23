@@ -5,17 +5,22 @@ import { getReviewsById } from "ServiceAPI";
 export const Reviews = () => {
 
     const { id } = useParams();
-    const getReviews = getReviewsById(id);
     const [reviews, setReviews] = useState([]);
     
     useEffect(() => {
 
-        getReviews
-            .then((response) => response.data)
-            .then(({ results }) => { setReviews([...results]) })
-            .catch(error => { console.log(error) });
+        const fetchReviews = async () => {
+            try {
+                const { data } = await getReviewsById(id);
+                setReviews(data.results)
+            } catch (error) {
+                console.error(error);
+            }
+        };
 
-    }, [reviews]);
+        fetchReviews();
+
+    }, [id]);
 
     return (
         <section>

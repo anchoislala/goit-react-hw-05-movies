@@ -6,17 +6,22 @@ import './Cast.styled.css'
 export const Cast = () => {
 
     const { id } = useParams();
-    const getCast = getCastById(id);
     const [cast, setCast] = useState([]);
  
     useEffect(() => {
 
-        getCast
-            .then((response) => response.data)
-            .then(({ cast }) => { setCast([...cast]) })
-            .catch(error => { console.log(error) });
+        const fetchCast = async () => {
+            try {
+                const { data } = await getCastById(id);
+                setCast(data.cast)
+            } catch (error) {
+                console.error(error);
+            }
+        };
 
-    }, [cast]);
+        fetchCast();
+
+    }, [id]);
     
     return (
         <section>
