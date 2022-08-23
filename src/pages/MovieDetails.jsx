@@ -7,7 +7,6 @@ import { MovieInformation } from "components/MovieInformation/MovieInformation";
 
 export const MovieDetails = () => {
   const { id } = useParams();
-  const movie = getMovieById(id);
   const location = useLocation();
   const backLinkHref = location.state?.from ?? "/movies";
 
@@ -20,18 +19,21 @@ export const MovieDetails = () => {
 
   useEffect(() => {
 
-    movie
-      .then((response) => response.data)
-      .then(movie => {
-        setTitle(movie.original_title)
-        setReleaseYear(movie.release_date)
-        setRating(movie.vote_average)
-        setOverview(movie.overview)
-        setGenres([...movie.genres])
-        setposter(movie.poster_path)
-      })
-      .catch(error => { console.log(error) });
+    const fetchMovie = async () => {
+      try {
+        const { data } = await getMovieById(id);
+        setTitle(data.original_title)
+        setReleaseYear(data.release_date)
+        setRating(data.vote_average)
+        setOverview(data.overview)
+        setGenres([...data.genres])
+        setposter(data.poster_path)
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
+    fetchMovie();
   }, [id]);
 
   return (
